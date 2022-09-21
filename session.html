@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     #container{
+        border:1px solid black;
+        width:50%;
+        margin:auto;
+        padding:10%;
+     }
+     .data{
+        padding:10px;
+        width:50%;
+     }
+    </style>
+</head>
+<body>
+    <h1>this is the Registration form</h1>
+    <div id = "container">
+    <input class = "data" type = "text" placeholder="first name" id = "name"/>
+    <input class = "data" type = "text" placeholder = "last name" id = "lastname"/>
+    <input class = "data" type = "number" placeholder="phone number" id = "number"/>
+    <input  class = "data" type = "email" placeholder = "type email" id = "email"/>
+    <button onclick = "submit()">Submit</button>
+    </div>
+
+</body>
+</html>
+<script>
+function submit(){
+    const name = document.getElementById("name").value;
+    const lastname = document.getElementById("lastname").value;
+    const number = document.getElementById("number").value;
+    const email = document.getElementById('email').value;
+    console.log(name,lastname,number,email) 
+    if(name.length===0 || lastname.length === 0 || number.length===0||email.length===0){
+        console.log("error")
+        alert("please fill the forms")
+    }
+}
+</script>
