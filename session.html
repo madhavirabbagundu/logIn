@@ -41,5 +41,20 @@ function submit(){
         console.log("error")
         alert("please fill the forms")
     }
+    else{
+        var data = {
+            name,
+            lastname,
+            number,
+            email
+        }
+        data = JSON.stringify(data)
+     localStorage.setItem("data1",data)
+        console.log(data)
+        var res = localStorage.getItem("data1")
+           console.log(res)
+           var res2 = JSON.parse(res)
+           console.log(res2)
+    }
 }
 </script>
