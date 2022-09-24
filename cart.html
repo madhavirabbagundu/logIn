@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width:50px;
+        }
+    </style>
+</head>
+<body>
+    <div id = 'container'></div>
+    <div id="total"></div>
+
+</body>
+</html>
+<script>
+    var cart = JSON.parse(localStorage.getItem('cart'))
+    
+
+var total_price = 0;
+var total_div = document.getElementById('total')
+    function productsData(data){
+  data.forEach(function (el) {
+    
+
+    var div = document.createElement("div")
+
+    var title = document.createElement("p")
+title.innerHTML = el.title
+
+    var image = document.createElement("img")
+      image.src = el.image
+
+    var price = document.createElement("p")
+    price.innerHTML = el.price
+
+   
+
+    div.append(title,image,price)
+
+    container.append(div)
+total_price = total_price+el.price
+
+  })
+    total_div.innerHTML = `<h1>${total_price}</h1>`
+    }
+    productsData(cart)
+</script>
